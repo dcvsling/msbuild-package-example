@@ -1,0 +1,10 @@
+<Project>
+    <ItemGroup>
+        <Content Update="$(NugetPackageRoot)$(ProjectName)\**\contentFiles\**\*.json">
+            <Pack>true</Pack>
+            <PackagePath>contentFiles/cs/$(TargetFramework)/</PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <BuildAction>Content</BuildAction>
+        </Content>
+    </ItemGroup>
+</Project>

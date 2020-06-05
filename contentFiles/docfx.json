@@ -1,0 +1,105 @@
+{
+  "metadata": [
+    {
+      //"src": [
+      //  {
+      //    "src": "../",
+      //    "files": [ "**/src/**.cs", "**/dist/**.cs", "**/app/**.cs" ]
+      //  }
+      //],
+      "src": [
+        {
+          "src": "../",
+          "files": [ "*.*","build/*.*" ]
+        }
+      ],
+      "dest": "obj/meta"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [ "obj/meta/*.yml" ]
+      },
+      {
+        "files": [ "articles/**.md", "articles/**.yml" ]
+      },
+      {
+        "files": [ "api/toc.yml", "api/index.md" ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**"
+        ]
+      }
+    ],
+    "dest": "bin/site",
+    "globalMetadata": {
+      "_enableSearch": true
+    },
+    "markdownEngineName": "markdig",
+    "template": [ "default", "statictoc" ],
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ]
+  },
+  "pdf": {
+    "content": [
+      {
+        "files": [ "obj/meta/*.yml" ],
+        "exclude": [ "**/toc.yml" ]
+      },
+      {
+        "files": [ "articles/**.md", "articles/**.yml" ],
+        "exclude": [ "**/toc.md", "**/toc.yml" ]
+      },
+      {
+        "files": [ "api/toc.yml", "api/index.md" ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**"
+        ]
+      }
+    ],
+    "template": [
+      "pdf.default"
+    ],
+    "xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
+    "keepRawFiles": true,
+    "outline": "WkDefaultOutline",
+    "dest": "bin/pdf"
+  }
+}
